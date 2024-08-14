@@ -1,7 +1,7 @@
-FROM python:3.9-slim-buster
+FROM python:3.11-alpine
+COPY . /app
 WORKDIR /app
-COPY requirement.txt .
-RUN pip install -r requirement.txt
-COPY . .
+RUN pip install -r requirements.txt
 EXPOSE 8080
-CMD ["flask", "run", "--host", "0.0.0.0"]
+ENTRYPOINT ["python"]
+CMD ["src/app.py"]
