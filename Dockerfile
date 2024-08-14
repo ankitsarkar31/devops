@@ -1,7 +1,7 @@
 FROM python:3.11-alpine
 COPY . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip install -r requirement.txt
 EXPOSE 8080
 ENTRYPOINT ["python"]
-CMD ["src/app.py"]
+CMD ["app.py"]
